@@ -1,5 +1,5 @@
+import '../../features/home/presentation/pages/home_page.dart';
 import '/core/route/route_names.dart';
-import '/features/home/presentation/pages/product_page.dart';
 import 'package:flutter/material.dart';
 
 class AppRoute {
@@ -9,8 +9,8 @@ class AppRoute {
 
   Route onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-      case RouteNames.productPage:
-        return MaterialPageRoute(builder: (_) => ProductPage());
+      case RouteNames.homePage:
+        return MaterialPageRoute(builder: (_) => HomePage());
 
       // case RouteNames.byCategoryPage:
       //   final categoryData = routeSettings.arguments as Map<String, String>;

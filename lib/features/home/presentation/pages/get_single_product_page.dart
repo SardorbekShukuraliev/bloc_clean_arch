@@ -5,14 +5,14 @@ import '/features/home/presentation/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProductPage extends StatefulWidget {
-  const ProductPage({super.key});
+class GetSingleProductPage extends StatefulWidget {
+  const GetSingleProductPage({Key? key}) : super(key: key);
 
   @override
-  State<ProductPage> createState() => _ProductPageState();
+  State<GetSingleProductPage> createState() => _GetSingleProductPageState();
 }
 
-class _ProductPageState extends State<ProductPage> {
+class _GetSingleProductPageState extends State<GetSingleProductPage> {
   TextEditingController idController = TextEditingController();
 
   void onFetchProductPressed() {

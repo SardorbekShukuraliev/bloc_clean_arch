@@ -17,3 +17,4 @@ class ProductError extends ProductState {
 
   ProductError(this.message);
 }
+
