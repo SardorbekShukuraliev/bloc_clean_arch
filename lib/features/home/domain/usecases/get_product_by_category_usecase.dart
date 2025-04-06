@@ -1,6 +1,5 @@
 
 import '../entities/all_products.dart';
-import '../entities/product.dart';
 import '../repositories/product_repository.dart';
 
 class GetProductByCategoryUsecase {

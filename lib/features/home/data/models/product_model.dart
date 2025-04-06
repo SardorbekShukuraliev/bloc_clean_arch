@@ -101,18 +101,12 @@ class DimensionsModel extends Dimensions {
 
 class ReviewModel extends Review {
   ReviewModel({
-    required int rating,
-    required String comment,
-    required DateTime date,
-    required String reviewerName,
-    required String reviewerEmail,
-  }) : super(
-    rating: rating,
-    comment: comment,
-    date: date,
-    reviewerName: reviewerName,
-    reviewerEmail: reviewerEmail,
-  );
+    required super.rating,
+    required super.comment,
+    required super.date,
+    required super.reviewerName,
+    required super.reviewerEmail,
+  });
 
   factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
@@ -137,16 +131,11 @@ class ReviewModel extends Review {
 
 class MetaModel extends Meta {
   MetaModel({
-    required String createdAt,
-    required String updatedAt,
-    required String barcode,
-    required String qrCode,
-  }) : super(
-    createdAt: createdAt,
-    updatedAt: updatedAt,
-    barcode: barcode,
-    qrCode: qrCode,
-  );
+    required super.createdAt,
+    required super.updatedAt,
+    required super.barcode,
+    required super.qrCode,
+  });
 
   factory MetaModel.fromJson(Map<String, dynamic> json) {
     return MetaModel(
