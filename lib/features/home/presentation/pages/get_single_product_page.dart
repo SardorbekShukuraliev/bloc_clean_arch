@@ -68,4 +68,6 @@ class _GetSingleProductPageState extends State<GetSingleProductPage> {
       ),
     );
   }
+
 }
+
