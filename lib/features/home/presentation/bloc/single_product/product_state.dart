@@ -1,4 +1,4 @@
-import '../../domain/entities/product.dart';
+import '../../../domain/entities/product.dart';
 
 abstract class ProductState {}
 
@@ -17,4 +17,10 @@ class ProductError extends ProductState {
 
   ProductError(this.message);
 }
+
+class AllProductsLoaded extends ProductState {
+  final List<Product> products;
+  AllProductsLoaded(this.products);
+}
+
 

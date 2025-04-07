@@ -6,4 +6,5 @@ class RouteNames {
   static const String byCategoryPage = '/by_category_page';
   static const String productPage = '/product_page';
   static const String getSingleProductPage = '/get_single_product_page';
+  static const String getAllProductPage = '/get_all_products';
 }

@@ -43,70 +43,52 @@ class ProductModel extends Product {
       warrantyInformation: json['warrantyInformation'] ?? "",
       shippingInformation: json['shippingInformation'] ?? "",
       availabilityStatus: json['availabilityStatus'] ?? "",
-      reviews: (json['reviews'] as List<dynamic>?)
-          ?.map((review) => ReviewModel.fromJson(review as Map<String, dynamic>))
+      reviews:
+      (json['reviews'] as List<dynamic>?)
+          ?.map(
+            (review) =>
+            ReviewModel.fromJson(review as Map<String, dynamic>),
+      )
           .toList() ??
           [],
       returnPolicy: json['returnPolicy'] ?? "",
       meta: MetaModel.fromJson(json['meta'] ?? {}),
-      images: List<String>.from(json['images'] ?? []),
+      images: List<String>.from(json['images'] ?? {}),
       thumbnail: json['thumbnail'] ?? "",
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'description': description,
-      'category': category,
-      'price': price,
-      'discountPercentage': discountPercentage,
-      'rating': rating,
-      'stock': stock,
-      'tags': tags,
-      'brand': brand,
-      'sku': sku,
-      'weight': weight,
-      'dimensions': (dimensions as DimensionsModel).toJson(),
-      'warrantyInformation': warrantyInformation,
-      'shippingInformation': shippingInformation,
-      'availabilityStatus': availabilityStatus,
-      'reviews': reviews.map((review) => (review as ReviewModel).toJson()).toList(),
-      'returnPolicy': returnPolicy,
-      'meta': (meta as MetaModel).toJson(),
-      'images': images,
-      'thumbnail': thumbnail,
-    };
   }
 }
 
 class DimensionsModel extends Dimensions {
   DimensionsModel({
+    //required super.width,
+    //required super.height,
     required super.depth,
   });
 
   factory DimensionsModel.fromJson(Map<String, dynamic> json) {
     return DimensionsModel(
+      // width: json['width'] ?? 0,
+      // height: json['height'],
       depth: json['depth'] ?? 0,
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'depth': depth,
-    };
   }
 }
 
 class ReviewModel extends Review {
   ReviewModel({
-    required super.rating,
-    required super.comment,
-    required super.date,
-    required super.reviewerName,
-    required super.reviewerEmail,
-  });
+    required int rating,
+    required String comment,
+    required DateTime date,
+    required String reviewerName,
+    required String reviewerEmail,
+  }) : super(
+    rating: rating,
+    comment: comment,
+    date: date,
+    reviewerName: reviewerName,
+    reviewerEmail: reviewerEmail,
+  );
 
   factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
@@ -117,25 +99,20 @@ class ReviewModel extends Review {
       reviewerEmail: json['reviewerEmail'],
     );
   }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'rating': rating,
-      'comment': comment,
-      'date': date.toIso8601String(),
-      'reviewerName': reviewerName,
-      'reviewerEmail': reviewerEmail,
-    };
-  }
 }
 
 class MetaModel extends Meta {
   MetaModel({
-    required super.createdAt,
-    required super.updatedAt,
-    required super.barcode,
-    required super.qrCode,
-  });
+    required String createdAt,
+    required String updatedAt,
+    required String barcode,
+    required String qrCode,
+  }) : super(
+    createdAt: createdAt,
+    updatedAt: updatedAt,
+    barcode: barcode,
+    qrCode: qrCode,
+  );
 
   factory MetaModel.fromJson(Map<String, dynamic> json) {
     return MetaModel(
@@ -144,14 +121,5 @@ class MetaModel extends Meta {
       barcode: json['barcode'] ?? "",
       qrCode: json['qrCode'] ?? "",
     );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'createdAt': createdAt,
-      'updatedAt': updatedAt,
-      'barcode': barcode,
-      'qrCode': qrCode,
-    };
   }
 }

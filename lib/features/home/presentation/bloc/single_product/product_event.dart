@@ -7,3 +7,5 @@ class FetchProduct extends ProductEvent {
 
   const FetchProduct({required this.id});
 }
+
+class GetAllProductsEvent extends ProductEvent {}

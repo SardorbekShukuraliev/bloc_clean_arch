@@ -1,7 +1,6 @@
-import '/features/home/data/models/product_model.dart';
-
-
+import 'package:blockfirsttime/features/home/data/models/product_model.dart';
 import '../../domain/entities/all_products.dart';
+
 
 class AllProductsModel extends AllProducts {
   AllProductsModel({
@@ -13,17 +12,13 @@ class AllProductsModel extends AllProducts {
 
   factory AllProductsModel.fromJson(Map<String, dynamic> json) =>
       AllProductsModel(
-        products: List<ProductModel>.from(
-            json["products"].map((x) => ProductModel.fromJson(x))),
-        total: json["total"],
-        skip: json["skip"],
-        limit: json["limit"],
+        products:
+        (json["products"] as List<dynamic>?)
+            ?.map((x) => ProductModel.fromJson(x as Map<String, dynamic>))
+            .toList() ??
+            [],
+        total: json["total"] ?? 0,
+        skip: json["skip"] ?? 0,
+        limit: json["limit"] ?? 0,
       );
-
-  // Map<String, dynamic> toJson() => {
-  //   "products": List<dynamic>.from(products.map((x) => x.toJson())),
-  //   "total": total,
-  //   "skip": skip,
-  //   "limit": limit,
-  // };
 }

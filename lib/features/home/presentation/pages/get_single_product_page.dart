@@ -1,12 +1,12 @@
-import '/features/home/presentation/bloc/product_bloc.dart';
-import '/features/home/presentation/bloc/product_event.dart';
-import '/features/home/presentation/bloc/product_state.dart';
+import '../bloc/single_product/product_bloc.dart';
+import '../bloc/single_product/product_event.dart';
+import '../bloc/single_product/product_state.dart';
 import '/features/home/presentation/widgets/product_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class GetSingleProductPage extends StatefulWidget {
-  const GetSingleProductPage({Key? key}) : super(key: key);
+  const GetSingleProductPage({super.key});
 
   @override
   State<GetSingleProductPage> createState() => _GetSingleProductPageState();

@@ -1,12 +1,10 @@
-
-
-import '../entities/all_products.dart';
+import 'package:blockfirsttime/features/home/domain/entities/all_products.dart';
 import '../repositories/product_repository.dart';
 
-class GetAllProductsUsecase {
+class GetAllProductsUseCase {
   final ProductRepository repository;
 
-  GetAllProductsUsecase(this.repository);
+  GetAllProductsUseCase(this.repository);
 
   Future<AllProducts> call() {
     return repository.getAllProducts();

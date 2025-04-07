@@ -1,4 +1,3 @@
-
 import '/features/home/domain/entities/product.dart';
 
 class AllProducts {
